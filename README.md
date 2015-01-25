@@ -1,5 +1,10 @@
 # Murphy.js
 
+*A functional interface for information hiding and inheritance.*
+
+> **Murphy's Law:** If there are two or more ways to do something, and one of
+> those ways can result in a catastrophe, then someone will do it.
+
 JavaScript does not provide an effective mechanism for encapsulating data.
 
 "Classes" (and, in ECMAScript 6, the `class` keyword) do not provide syntactic
