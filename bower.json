@@ -1,0 +1,30 @@
+{
+  "name": "murphy",
+  "main": "murphy.js",
+  "version": "1.0.0",
+  "authors": [
+    "Jackson Ray Hamilton <jackson@jacksonrayhamilton.com>"
+  ],
+  "description": "Prevent things that can go wrong from going wrong.",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "inheritance",
+    "encapsulation",
+    "privacy",
+    "private",
+    "protected"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/jacksonrayhamilton/murphy",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

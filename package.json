@@ -1,0 +1,26 @@
+{
+  "name": "murphy",
+  "version": "1.0.0",
+  "description": "Prevent things that can go wrong from going wrong.",
+  "main": "murphy.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jacksonrayhamilton/murphy.git"
+  },
+  "keywords": [
+    "inheritance",
+    "encapsulation",
+    "privacy",
+    "private",
+    "protected"
+  ],
+  "author": "Jackson Ray Hamilton <jackson@jacksonrayhamilton.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jacksonrayhamilton/murphy/issues"
+  },
+  "homepage": "https://github.com/jacksonrayhamilton/murphy"
+}
