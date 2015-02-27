@@ -32,7 +32,7 @@ console.log(joe._name); // "Joe"
 ```
 
 It is a major shortcoming that `_name` is accessible from the outside, because
-there is no reason for it to be, and it would unreliable for a programmer to
+there is no reason for it to be, and it would be unreliable for a programmer to
 depend on its accessibility.
 
 To achieve privacy, one must use `var`.
