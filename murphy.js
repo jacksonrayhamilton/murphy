@@ -34,7 +34,6 @@
     }
 }(this, function factory() {
     'use strict';
-    var slice = Array.prototype.slice;
     // Create a local constructor maker to implicitly prevent extensions (and
     // thus prevent "dredging" protected values via parasitism).
     return function makeConstructorMaker() {
@@ -50,15 +49,23 @@
             // container for private, protected and public members.
             return function inheritor(inheriting) {
                 var isInheriting = inheriting === check;
+                // Slicing `arguments' is bad for performance, so copy into a
+                // new array instead.
+                var index = 0;
+                var length = arguments.length;
+                var argumentsArray = new Array(length);
+                for (; index < length; index += 1) {
+                    argumentsArray[index] = arguments[index];
+                }
                 var parentArguments, parentThat, that;
                 if (parent) {
                     if (isInheriting) {
                         // Don't prepend the `check' object more than once.
-                        parentArguments = slice.call(arguments);
+                        parentArguments = argumentsArray;
                     } else {
                         // The first time around, tell the parent it is being
                         // inherited-from.
-                        parentArguments = [check].concat(slice.call(arguments));
+                        parentArguments = [check].concat(argumentsArray);
                     }
                     // Capture the parent's protected and public members.
                     parentThat = parent.apply(null, parentArguments);
@@ -79,14 +86,14 @@
                 if (isInheriting) {
                     // Exclude the `check' object from the constructor's
                     // parameters.
-                    constructor.apply(null, [that].concat(slice.call(arguments, 1)));
+                    constructor.apply(null, [that].concat(argumentsArray.slice(1)));
                     // Recurse.
                     return {
                         protected: that.protected,
                         public: that.public
                     };
                 }
-                constructor.apply(null, [that].concat(slice.call(arguments)));
+                constructor.apply(null, [that].concat(argumentsArray));
                 // Stopping case. Automatically export the accumulated
                 // public members.
                 return that.public;
